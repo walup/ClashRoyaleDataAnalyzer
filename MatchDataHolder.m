@@ -24,7 +24,6 @@ classdef MatchDataHolder
             obj.deckDefficiency = deckDefficiency;
             obj.enemyDeckDefficiency = enemyDeckDefficiency;
         end
-        
     end
     
     

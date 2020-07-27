@@ -43,7 +43,7 @@ classdef PlayerTag
         function obj = importTag(obj,path)
             file = fopen(path,'r');
             %Format specifier of a string
-            formatSpec = '%c';
+            formatSpec = '%c\r\n';
             tagString = fscanf(file,formatSpec);
             fclose(file);
             obj = obj.setTag(tagString);
