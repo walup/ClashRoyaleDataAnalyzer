@@ -13,16 +13,20 @@ classdef MatchDataHolder
         %familiarize myself more with what the counters are 
         deckDefficiency;
         enemyDeckDefficiency;
+        date;
+        
+        
     end
     
     methods
-        function obj = MatchDataHolder(trophies,win,tilt,deck, deckDefficiency,enemyDeckDefficiency)
+        function obj = MatchDataHolder(trophies,win,tilt,deck, deckDefficiency,enemyDeckDefficiency,date)
             obj.trophies = trophies;
             obj.win = win;
             obj.tilt = tilt;
             obj.deck = deck;
             obj.deckDefficiency = deckDefficiency;
             obj.enemyDeckDefficiency = enemyDeckDefficiency;
+            obj.date = date;
         end
     end
     

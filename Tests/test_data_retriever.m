@@ -1,10 +1,10 @@
 %Import the token
 token = RoyaleKey();
-token = token.importToken("C:\Users\walup\OneDrive\Documentos\MATLAB\RoyaleAnalizer\Tokens\my_token.txt");
+token = token.importToken("C:\Users\walup\OneDrive\Documentos\MATLAB\RoyaleAnalyzer\Tokens\my_token.txt");
 
 %Import the player tag
 tag = PlayerTag("walup");
-tag = tag.importTag("C:\Users\walup\OneDrive\Documentos\MATLAB\RoyaleAnalizer\Tags\walup.txt");
+tag = tag.importTag("C:\Users\walup\OneDrive\Documentos\MATLAB\RoyaleAnalyzer\Tags\walup.txt");
 
 %Create a new data retriever
 dataRetriever = DataRetriever(token);

@@ -45,7 +45,7 @@ classdef DataRetriever
                resp = webread(req,obj.options);
            else
                error("A player tag needs to be specified before retrieving this information");
-           end
+           end      
         end
         
     end

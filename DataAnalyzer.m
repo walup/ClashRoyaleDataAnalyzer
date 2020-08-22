@@ -4,6 +4,7 @@ classdef DataAnalyzer
         retriever;
         data  = [];
         DATA_CAP;
+        
     end
     
     methods
@@ -103,9 +104,10 @@ classdef DataAnalyzer
                             opponentDefficiency = opponentDefficiency + (rivalDeck(i).maxLevel-rivalDeck(i).level);
                         end
                     end
-                
+                    %Obtain the date
+                    date = match.battleTime(1:8);
                     %Create a match data holder 
-                    dataHolder = MatchDataHolder(trophies,win,tilt,deck,defficiency,opponentDefficiency);
+                    dataHolder = MatchDataHolder(trophies,win,tilt,deck,defficiency,opponentDefficiency,date);
                     %Now add this json to the file
                     json = jsonencode(dataHolder);
                     if(~ismember(json,stringsToCompare))
@@ -123,7 +125,7 @@ classdef DataAnalyzer
             file = fopen(path,'r');
             tline  = fgetl(file);
             jsonData = jsondecode(tline);
-            matchData = MatchDataHolder(jsonData.trophies,jsonData.win, jsonData.tilt,jsonData.deck,jsonData.deckDefficiency,jsonData.enemyDeckDefficiency);
+            matchData = MatchDataHolder(jsonData.trophies,jsonData.win, jsonData.tilt,jsonData.deck,jsonData.deckDefficiency,jsonData.enemyDeckDefficiency,jsonData.date);
             arr = [arr,matchData];
             
             while true
@@ -131,7 +133,7 @@ classdef DataAnalyzer
                tline = fgetl(file);
                if(ischar(tline))
                     jsonData = jsondecode(tline);
-                    matchData = MatchDataHolder(jsonData.trophies,jsonData.win, jsonData.tilt,jsonData.deck,jsonData.deckDefficiency,jsonData.enemyDeckDefficiency);
+                    matchData = MatchDataHolder(jsonData.trophies,jsonData.win, jsonData.tilt,jsonData.deck,jsonData.deckDefficiency,jsonData.enemyDeckDefficiency,jsonData.date);
                     arr = [arr,matchData];
                else
                    break;
@@ -163,8 +165,6 @@ classdef DataAnalyzer
                 error("No data to process, open a data file using the instruction openMatchData")
             end            
         end
-        
-        
         
         
         %Auxiliiary function to extract last 25 matches in a log
