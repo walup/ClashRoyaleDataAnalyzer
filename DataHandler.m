@@ -1,4 +1,4 @@
-classdef DataAnalyzer
+classdef DataHandler
    
     properties
         retriever;
@@ -9,7 +9,7 @@ classdef DataAnalyzer
     
     methods
         %Constructor
-        function obj = DataAnalyzer(retriever)
+        function obj = DataHandler(retriever)
             obj.retriever = retriever;
             obj.DATA_CAP = 10000;
         end

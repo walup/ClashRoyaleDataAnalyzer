@@ -14,8 +14,6 @@ classdef MatchDataHolder
         deckDefficiency;
         enemyDeckDefficiency;
         date;
-        
-        
     end
     
     methods

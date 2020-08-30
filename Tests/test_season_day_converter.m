@@ -11,5 +11,6 @@ seasonDayConverter.writeSeasonInitialCondition("C:\Users\walup\OneDrive\Document
 
 %% Reading an initial condition
 seasonDayConverter = seasonDayConverter.readSeasonInitialCondition("C:\Users\walup\OneDrive\Documentos\MATLAB\RoyaleAnalyzer\SeasonInfo");
+
 %% Get the day of this season 
-[n,seasonsPassed,durationOfSeason] = seasonDayConverter.getSeasonDay("20200822");
+[n,seasonsPassed,durationOfSeason] = seasonDayConverter.getSeasonDay("20200828");

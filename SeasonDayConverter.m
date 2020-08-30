@@ -47,7 +47,7 @@ classdef SeasonDayConverter
         %Gets the season day using a date and also the seasons that have passed since the initial condition season 
         %The order of this algorithm is O(d) where d is the number of
         %seasons passed since the initial condition, d can be controlled by
-        %updating the initial condition, but it shouldn't be a big problem
+        %updating the initial condition, but it shouldn't be a big problem 
         %if you don't do it for a year
         function [n,seasonsPassed,duration] = getSeasonDay(obj,date)
             
@@ -84,7 +84,7 @@ classdef SeasonDayConverter
                 error("Please open some initial date conditions first. Make sure to update them once in a while too using writeSeasonInitialConditions");
             end
         end
-        
+      
         
         function n = getSeasonDuration(obj,refDate)
            if(obj.initialDate ~= "" && obj.daysMissingOnInitialDate~= 0)
@@ -95,9 +95,9 @@ classdef SeasonDayConverter
                %Get the number of mondays in the current month
                mondays = obj.numberOfMondaysInMonth(m,y);
                if(mondays == 5)
-                   n = 35;
+                   n = uint32(SeasonDuration.LONG_SEASON);
                elseif(mondays == 4)
-                   n = 28;
+                   n = uint32(SeasonDuration.SHORT_SEASON);
                end
            end
         end
